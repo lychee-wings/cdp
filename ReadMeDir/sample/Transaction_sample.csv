@@ -1,0 +1,5 @@
+﻿Order Date/Time,Symbol,Stock Name/Transaction ID,Market,Action,Quantity,Price,Settlement Mode,Filled Quantity,Filled Price,Outstanding Quantity,Status,Input Value
+27/8/25 9:04,D05,DBS 20250827000002607,SG,Buy,300,SGD 49.84000,CPF,0,-,300,Expired,-
+26/8/25 9:38,U96,SEMBCORP IND 20250826000004267,SG,Buy,800,SGD 6.07000,Cash Upfront,800,6.07,0,Filled,-
+26/8/25 9:30,D05,DBS 20250826000003875,SG,Buy,200,SGD 49.85000,CPF,0,-,200,Expired,-
+20/8/25 16:18,D05,DBS 20250820000012366,SG,Sell,200,SGD 50.25000,CPF,200,50.3,0,Filled,-

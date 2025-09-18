@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: cdp-app
+  profiles:
+    active: local
+
+  jpa:
+    show-sql: true
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
+server:
+  port: 9013
+  name: ${SERVER_NAME:cdp-app}
+
+temp:
+  folder: ${TEMP_FOLDER:temp-folder}
+
+application:
+  literal-null: ${LITERAL_NULL:na, nil, -, nan}
+  strict-parser: ${STRICT_BEAN_PARSER:false}
+
+springdoc:
+  api-docs:
+    path: /api-doc
