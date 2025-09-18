@@ -22,7 +22,6 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.support.TaskExecutorJobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.test.JobLauncherTestUtils;
-import org.springframework.batch.test.JobRepositoryTestUtils;
 import org.springframework.batch.test.context.SpringBatchTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,8 +42,14 @@ class JobLauncherControllerTest {
   private static Path errorFile;
   @Autowired
   public JobLauncherTestUtils jobLauncherTestUtils;
+
   @BeforeAll
   public static void setupAll(@Autowired JdbcTemplate jdbcTemplate) throws IOException {
+
+    if (RESOURCES_DIRECTORY.toFile().exists() || RESOURCES_DIRECTORY.toFile().mkdir()) {
+      System.out.println("Creating path for storing csv files!");
+    }
+
     validFile = Files.writeString(RESOURCES_DIRECTORY.resolve("validInput.csv"), """
         Date,Open,High,Low,Close,Adj Close,Volume
         14/2/25,44.88,44.96,44.8,44.84,44.84,4145900
